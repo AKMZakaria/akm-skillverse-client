@@ -84,7 +84,7 @@ const MyAddedCourses = () => {
                     </div>
                   </div>
                 </td>
-                <td>{course.price} $</td>
+                <td>{course.price}$</td>
 
                 <td>
                   <Link

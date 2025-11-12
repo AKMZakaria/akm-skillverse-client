@@ -166,12 +166,15 @@ const Navbar = () => {
           {user ? (
             <Link
               onClick={handleLogOut}
-              className="btn bg-primary text-white font-bold rounded-full"
+              className="btn btn-sm md:btn-neutral bg-primary text-white font-bold rounded-full"
             >
               Log Out
             </Link>
           ) : (
-            <Link to={'/login'} className="btn font-bold bg-secondary text-white rounded-full">
+            <Link
+              to={'/login'}
+              className="btn btn-sm md:btn-neutral font-bold bg-secondary text-white rounded-full"
+            >
               Login
             </Link>
           )}

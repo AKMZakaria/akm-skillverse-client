@@ -79,7 +79,7 @@ const MyEnrolledCourses = () => {
                     </div>
                   </div>
                 </td>
-                <td className="text-xs md:text-[1rem]">{course.price} $</td>
+                <td className="text-xs md:text-[1rem]">{course.price}$</td>
                 <td>
                   <Link
                     to={`/coursedetails/${course.courseId}`}
