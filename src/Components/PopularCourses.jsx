@@ -13,16 +13,16 @@ const PopularCourses = ({ data }) => {
     <div>
       <h3 className="text-xl md:text-4xl mt-10 font-bold text-center">Popular Courses</h3>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center md:max-w-[1400px] mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center md:max-w-[1400px] mx-auto gap-5">
         {featuredCourses.map((course) => (
           <div
             data-aos="fade-up"
             data-aos-anchor-placement="center-bottom"
             key={course.price}
-            className="flex flex-col shadow rounded-xl w-[300px] md:w-[300px] gap-2 p-4 bg-base-200  mt-5"
+            className="flex flex-col shadow rounded-xl w-[300px] md:w-[300px] gap-2 p-4 bg-base-200 mt-10 h-[500px] justify-around"
           >
             <img className="w-full h-40 rounded-2xl" src={course.image_url} />
-            <h3 className="  text-sm font-medium md:text-xl">{course.title}</h3>
+            <h3 className="text-sm font-medium md:text-xl">{course.title}</h3>
             <p className=" text-xs">Price: {course.price} $</p>
 
             <p className="text-[#00D390] flex gap-1 items-center">Category: {course.category}</p>

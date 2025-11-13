@@ -31,17 +31,17 @@ const ForgotPass = () => {
     <div className="hero min-h-screen">
       <title>ToyTopia - Reset Password</title>
       <div className="hero-content flex-col">
-        <h1 className="text-3xl font-bold text-white mb-4">Reset Password</h1>
+        <h1 className="text-3xl font-bold mb-4">Reset Password</h1>
 
-        <div className="card w-full max-w-sm bg-black/80 backdrop-blur-lg rounded-2xl border border-purple-500/30 shadow-2xl p-6">
+        <div className="card w-full max-w-sm bg-black/15 backdrop-blur-lg rounded-2xl border border-blue-500/30 shadow-2xl p-6">
           <form onSubmit={handleReset} className="flex flex-col gap-4">
-            <label className="text-white">Email</label>
+            <label className="">Email</label>
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
-              className="input bg-transparent border border-white text-white rounded-lg placeholder-gray-400"
+              className="input bg-transparent border rounded-lg placeholder-gray-400"
               required
             />
             <div className="flex justify-center">

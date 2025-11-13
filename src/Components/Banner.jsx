@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 const Banner = () => {
   return (
@@ -11,7 +12,9 @@ const Banner = () => {
             Explore the most popular courses chosen by learners worldwide. Upgrade your skills,
             learn from experts, and take the next step toward your career goals with AKM SkillVerse.
           </p>
-          <button className="btn btn-secondary">Get Started</button>
+          <Link to={'/allcourses'} className="btn btn-secondary">
+            Get Started
+          </Link>
         </div>
       </div>
     </div>
