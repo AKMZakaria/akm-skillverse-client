@@ -2,6 +2,8 @@ import React, { use } from 'react'
 import { AuthContext } from '../Provider/AuthProvider'
 import useAxios from '../Hooks/useAxios'
 import Swal from 'sweetalert2'
+import { useNavigation } from 'react-router'
+import Loading from '../Pages/Loading'
 
 const AddCourse = () => {
   const { user } = use(AuthContext)
@@ -44,6 +46,12 @@ const AddCourse = () => {
         e.target.reset()
       }
     })
+  }
+
+  const navigation = useNavigation()
+
+  if (navigation.state === 'loading') {
+    return <Loading></Loading>
   }
 
   return (

@@ -1,8 +1,9 @@
 import React, { use, useEffect, useState } from 'react'
 import { AuthContext } from '../Provider/AuthProvider'
 import useAxios from '../Hooks/useAxios'
-import { Link } from 'react-router'
+import { Link, useNavigation } from 'react-router'
 import Swal from 'sweetalert2'
+import Loading from '../Pages/Loading'
 
 const MyEnrolledCourses = () => {
   const { user } = use(AuthContext)
@@ -47,6 +48,22 @@ const MyEnrolledCourses = () => {
           })
       }
     })
+  }
+
+  const navigation = useNavigation()
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 500)
+    return () => clearTimeout(timer)
+  }, [])
+
+  if (loading) {
+    return <Loading></Loading>
+  }
+
+  if (navigation.state === 'loading') {
+    return <Loading></Loading>
   }
 
   return (

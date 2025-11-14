@@ -1,8 +1,9 @@
-import React, { useState, useContext } from 'react'
-import { Link, useLoaderData } from 'react-router'
+import React, { useState, useContext, useEffect } from 'react'
+import { Link, useLoaderData, useNavigation } from 'react-router'
 import useAxios from '../Hooks/useAxios'
 import { AuthContext } from '../Provider/AuthProvider'
 import Swal from 'sweetalert2'
+import Loading from '../Pages/Loading'
 
 const AllCourses = () => {
   const courses = useLoaderData()
@@ -50,6 +51,32 @@ const AllCourses = () => {
         })
       }
     })
+  }
+
+  // useEffect(() => {
+  //   setLoading(true)
+  //   axiosInstance
+  //     .get('/courses') // replace with your API endpoint
+  //     .then((res) => setCourses(res.data))
+  //     .catch((err) => console.error(err))
+  //     .finally(() => setLoading(false))
+  // }, [axiosInstance, setLoading])
+
+  // const [loading, setLoading] = useState(true)
+
+  // useEffect(() => {
+  //   const timer = setTimeout(() => setLoading(false), 500)
+  //   return () => clearTimeout(timer)
+  // }, [])
+
+  // if (loading) {
+  //   return <Loading></Loading>
+  // }
+
+  const navigation = useNavigation()
+
+  if (navigation.state === 'loading') {
+    return <Loading></Loading>
   }
 
   return (
